@@ -18,13 +18,14 @@ public class TestBase {
 	public static Properties prop;
 
 
+	
 	//Super class Constructor
 	public TestBase() {
 
 		try {
 
 			prop = new Properties();
-			FileInputStream ip=new FileInputStream("C:\\Users\\info\\eclipse-workspace\\CRM_CucumberBDD_POM\\src\\main\\java\\com_qa_ConfigureProperties\\config.properties");
+			FileInputStream ip=new FileInputStream("C:\\Users\\info\\eclipse-workspace\\CRM_CucumberBDD_POM_Maven\\src\\main\\java\\com_qa_ConfigureProperties\\config.properties");
 			prop.load(ip);	
 
 		}catch (FileNotFoundException e) {
@@ -38,9 +39,11 @@ public class TestBase {
 
 
 	// Initializing / Invoke browser
+	@SuppressWarnings("deprecation")
 	public static void initialize() {
 
 		String browserName = prop.getProperty("browser");
+		
 		if(browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
@@ -58,3 +61,4 @@ public class TestBase {
 		driver.get(prop.getProperty("url"));
 	}
 }
+

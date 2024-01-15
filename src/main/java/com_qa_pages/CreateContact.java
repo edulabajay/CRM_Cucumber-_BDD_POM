@@ -38,6 +38,12 @@ public class CreateContact extends TestBase {
 	}
 
 	//3.Action 
+	
+   public String Verify_contact_title() {
+		
+		return driver.getTitle();
+	}
+	
 
 	//WITH DATA DRIVEN TESTING
 	public void add_contact_details(String first_name, String last_name,String Middle_name,String company_name) {

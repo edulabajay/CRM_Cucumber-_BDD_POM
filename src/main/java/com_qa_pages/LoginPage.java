@@ -7,7 +7,7 @@ import com_BasePage.TestBase;
 
 public class LoginPage extends TestBase {
 
-	//1.Page 	Factory or Object Repo
+	//1.Page Factory or Object Repo
 		@FindBy(name = "email")
 		WebElement username;
 		
